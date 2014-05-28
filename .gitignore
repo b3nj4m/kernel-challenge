@@ -1,0 +1,5 @@
+hello/*.o
+hello/*.ko
+hello/*.mod.c
+hello/modules.order
+hello/Module.symvers
