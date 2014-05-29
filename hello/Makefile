@@ -1,5 +1,10 @@
 obj-m += hello.o
+
+ifndef KERNEL_DIR
+	KERNEL_DIR=/lib/modules/$(shell uname -r)/build
+endif
+
 all:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+	make -C $(KERNEL_DIR) M=$(PWD) modules
 clean:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+	make -C $(KERNEL_DIR) M=$(PWD) clean
